@@ -2,13 +2,18 @@ f = open("../input.txt")
 data = f.read().strip()
 lines = data.split("\n")
 
+dir_sizes = {}
+
 def calc_dir_size(dir, dir_map):
     size = 0
     for x, y in dir_map[dir]:
         if x == "dir":
-            size += calc_dir_size(y, dir_map)
+            if dir_sizes.get(y) is None:
+                dir_sizes[y] = calc_dir_size(y, dir_map)
+            size += dir_sizes[y]
         else:
             size += int(x)
+    dir_sizes[dir] = size
     return size 
 
 dir_map = {}

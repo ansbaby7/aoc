@@ -2,7 +2,7 @@ use std::fs;
 use std::collections::HashMap;
 
 fn main() {
-    let data = fs::read_to_string("../sample_input.txt").expect("Couldn't read from string");
+    let data = fs::read_to_string("../input.txt").expect("Couldn't read from string");
     let lines: Vec<&str> = data.trim().split("\n").collect();
 
     let mut dir_sizes:HashMap<String, u32> = HashMap::new();

@@ -1,4 +1,4 @@
-f = open("input.txt")
+f = open("../input.txt")
 data = f.read().strip()
 f.close()
 

@@ -1,4 +1,4 @@
-f = open("input.txt")
+f = open("../input.txt")
 data = f.read().strip()
 f.close()
 
@@ -12,11 +12,11 @@ for i in range(1, l-1):
     for j in range(1, l-1):
         left = list(reversed(grid[i][0:j]))
         right = grid[i][j+1:l]
-        top = [grid[i-k][j] for k in range(1, i+1)]
+        up = [grid[i-k][j] for k in range(1, i+1)]
         down = [grid[i+k][j] for k in range(1, l-i)]
 
         score = 1
-        for side in [left, right, top, down]:
+        for side in [left, right, up, down]:
             count = 0
             for height in side:
                 count += 1
